@@ -20,7 +20,7 @@ export const timeIRL = async(timezone:string):Promise<String> =>{
     if(!API_KEY) throw new GraphQLError("Falta la api key")
     const url = `https://api.api-ninjas.com/v1/worldtime?timezone=${timezone}`
     const data = await fetch(url, {headers: {
-        'X-Api-Key': 'hTk8ROXwcmtD21c6BMEx9A==SKPloNKVjpjIUdt0'
+        'X-Api-Key': API_KEY
     },})
     if(data.status !== 200)throw new GraphQLError("No se ha podido acceder bien a la api")
     const resultado = await data.json()
